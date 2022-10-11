@@ -25,7 +25,7 @@ class PersonalSerializer(serializers.ModelSerializer):
         return (now() - obj.start_date).days
 
 
-class DepartmentSerializer(serializers.ModelSerializer):
+class DepartmentPersonalSerializer(serializers.ModelSerializer):
     personal_count = serializers.SerializerMethodField()
     departments =PersonalSerializer(many=True,read_only=True)
     #+(nested serializer)obje olarak gösteriyor bütünbilgiler ve many=True yapıyoruz ki birden fazla personel gelebilsin diye
